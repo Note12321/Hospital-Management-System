@@ -25,7 +25,7 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <a href="{{ url_for('index') }}"><div class="layui-logo">图书管理系统</div></a>
+    <a href="{{ url_for('index') }}"><div class="layui-logo">ESD手术视频管理系统</div></a>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
@@ -47,27 +47,23 @@
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
         <li class="layui-nav-item">
-          <a class="" href="javascript:;">图书管理</a>
+          <a class="" href="javascript:;">视频管理</a>
           <dl class="layui-nav-child">
-             <dd><a href="{{ url_for('storage') }}">入库管理</a></dd>
-             <dd><a href="{{ url_for('borrow') }}">学生借书</a></dd>
-             <dd><a href="{{ url_for('return_book') }}">学生还书</a></dd>
-             <dd><a href="javascript:;">图书注销</a></dd>
+             <dd><a href="{{ url_for('func') }}">视频上传</a></dd>
            </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;">信息设置</a>
           <dl class="layui-nav-child">
              <dd><a href="{{ url_for('change_info') }}">管理员信息设置</a></dd>
-             <dd><a href="javascript:;">图书馆信息设置</a></dd>
-             <dd><a href="javascript:;">图书词库设置</a></dd>
+
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href="{{ url_for('search_book') }}">图书信息查询</a>
+          <a href="{{ url_for('search_book') }}">视频信息查询</a>
         </li>
         <li class="layui-nav-item">
-          <a href="{{ url_for('search_student') }}">学生信息查询</a>
+          <a href="{{ url_for('search_student') }}">患者信息查询</a>
         </li>
       </ul>
     </div>
@@ -91,7 +87,7 @@
   </div>
 
   <div class="layui-footer">
-    Copyright 2019 Construct&nbsp;&nbsp;|&nbsp;&nbsp;版权所有:信息162许致立
+    Copyright 2025 Construct&nbsp;&nbsp;|&nbsp;&nbsp;版权所有:软件工程周明巍
   </div>
 </div>
 <script src="../static/layui/layui.js"></script>

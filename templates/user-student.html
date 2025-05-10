@@ -1,5 +1,5 @@
 {% extends "base-user.html" %}
-{% block title %}查询学生信息{% endblock %}
+{% block title %}查询病人信息{% endblock %}
 
 {% block body %}
 <div style="width: 1200px;margin: auto">
@@ -10,7 +10,7 @@
             <div class="layui-inline">
                 <div class="layui-row layui-col-space10">
                     <div class="layui-col-md4">
-                        <label style="font-size: medium;width: 180px;" class="layui-form-label">请输入学生借阅卡号码：</label>
+                        <label style="font-size: medium;width: 180px;" class="layui-form-label">请输入病人就诊卡卡号：</label>
                     </div>
                     <div class="layui-col-md5">
                         <div class="layui-input-inline">
@@ -38,12 +38,12 @@
     <table lay-even id="result" lay-filter="re">
       <thead>
         <tr>
-          <th lay-data="{field:'barcode', width:160}">图书编号</th>
-          <th lay-data="{field:'book_name', width:200}">书名</th>
-          <th lay-data="{field:'author', width:140}">作者</th>
+          <th lay-data="{field:'barcode', width:160}">视频编号</th>
+          <th lay-data="{field:'book_name', width:200}">视频</th>
+          <th lay-data="{field:'author', width:140}">医生</th>
           <th lay-data="{field:'start_date', width:200}">起始日期</th>
-          <th lay-data="{field:'due_date', width:200}">应还日期</th>
-          <th lay-data="{field:'end_date'}">还书日期</th>
+          <th lay-data="{field:'due_date', width:200}">日期</th>
+          <th lay-data="{field:'end_date'}">到期日期</th>
         </tr>
       </thead>
       <tbody>
@@ -141,7 +141,7 @@
                                             layui.use('layer', function(){
                                             var layer = layui.layer;
 
-                                            layer.msg('没有任何借阅记录',{time: 1000});
+                                            layer.msg('没有任何记录',{time: 1000});
                                             });
                                         }
                                     }

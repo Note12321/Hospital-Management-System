@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block card%}
+{{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ins-style.css') }}">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+<div class="container">
+    <!-- 可根据 base.html 的上方元素高度进行调整 -->
+    <div class="btn-group">
+        <input type="file" id="video-upload" hidden accept="video/*">
+        <button class="ins-btn primary" onclick="document.getElementById('video-upload').click()">
+            <i class="fas fa-upload"></i> 上传视频
+        </button>
+        <button class="ins-btn success" onclick="startPrediction()">
+            <i class="fas fa-brain"></i> 进行预测
+        </button>
+        <button class="ins-btn warning" onclick="generateReport()">
+            <i class="fas fa-file-pdf"></i> 生成报告
+        </button>
+        <button class="ins-btn danger" onclick="resetAll()">
+            <i class="fas fa-redo"></i> 重新上传
+        </button>
+    </div>
+
+    <div class="upload-status">
+        <div class="upload-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="upload-stats">
+            <span class="speed">0 MB/s</span>
+            <span class="time">剩余时间: --</span>
+            <span class="percentage">0%</span>
+        </div>
+    </div>
+
+    <div id="video-player" class="video-container"></div>
+    <div id="results-grid" class="grid-container"></div>
+</div>
+
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
